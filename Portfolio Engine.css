@@ -1,0 +1,240 @@
+/* General reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #1e1e1e;
+  padding: 15px 10%;
+  position: relative; /* needed for pseudo-element positioning */
+}
+
+/* Thin divider inside header padding */
+header::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: white;
+  margin-top: 8px; /* reduced from 15px */
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; /* RO left, links right */
+  align-items: center;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* space between Resume, LinkedIn, Email */
+}
+h1, h2, h3, p, .project-card, .about {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.navbar ul li a {
+  display: flex;              /* horizontal layout */
+  align-items: center;        /* vertically center icon + text */
+  gap: 5px;                   /* spacing between icon and text */
+  text-decoration: none;
+  color: white;               /* navbar text now white */
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+/* Contract (Resume) icon */
+.contract-icon {
+  font-size: 16px;            
+  color: white;               /* match navbar text */
+}
+
+/* Mail (Email) icon */
+.mail-icon {
+  font-size: 16px;
+  color: white;
+}
+
+/* Ensure hover affects both text + icon */
+.navbar ul li a:hover {
+  color: #1F64F4;
+}
+
+.navbar ul li a:hover .contract-icon,
+.navbar ul li a:hover .mail-icon {
+  color: #1F64F4;
+}
+
+.linkon img {
+  transition: opacity 0.3s ease;
+}
+/* Swap icon when hovering over the link */
+.linkon:hover img {
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABRUlEQVR4nO2Wv0rEQBDG90Q7/xQiiHg7QQQbG7HQSivBw7snEBF2NilsfIRrrXwOH8DOThEr38BKRRQP0czkEFFXEpK7XBWEzepBPviKfDvMb2F22QhRSQghFe8A0j1oNlaMdAc+NwrBSaEtaGqp6bYYbBma+ddgifwKyBeA1HUGlppDT3UhyRWvgKZPN2Ckq/xaPCtX4HcviNbivI5RCzR9O5sxIH0B0oPzwwVIR7Gl5uN07o9ZBppOAfmm7tOh1NyUyBqQLq2AhTC1OJ85eBpPN3Ldr43WF4KXqYEGbTMCyGelgjPN7b1N9z6S80BbJYNNDZDP0xGc9Hrs82yp4HlFy7kb8CHaZjTOVwMzVirYU+FGvnZJPU/0+wxePWEV7Ieb+drF3c5kBYahA4Mli/8Lxr/69fG5YROevOHI24XgSpWGWj+J1uzlR4d+nQAAAABJRU5ErkJggg==");
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;                 
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+
+  /* Recommended so ligatures render correctly */
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+
+  /* Variable settings */
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.main-content {
+  padding: 30px 10%; 
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.clickable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* sits above card */
+}
+
+
+
+/* Footer */
+footer {
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Projects section */
+.projects {
+  margin-top: 60px;
+}
+
+
+/* Project Card Layout */
+.project-card {
+  position: relative; /* so clickable span is positioned inside */
+  display: flex;
+  background-color: #0C0B10;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 
+    0 15px 25px rgba(0, 0, 0, 0.6),    /* deep dark shadow */
+    0 8px 10px rgba(0, 0, 0, 0.4),     /* mid-layer shadow */
+    0 0 30px rgba(255, 255, 255, 0.7), /* stronger white glow */
+    0 0 15px rgba(255, 255, 255, 0.5); /* inner white glow */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.project-image img {
+  width: 400px;
+  height: auto;
+  display: block;
+}
+
+.project-info {
+  padding: 25px;
+  flex: 1;
+}
+
+.project-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.project-info p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.project-info .btn {
+  position: relative;
+  z-index: 2; /* ensures button is above the clickable span */
+}
+/* Button Style*/
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #f4a261;   /* default state */
+  color: black;          /* black text */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
+}
+.btn:hover {
+  background: #f7c59f;   /* hover state */
+  color: black;         /* stays black */
+  transform: scale(1.05);
+}
+/* Intro fade-in effect */
+.intro {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease; /* faster than About */
+}
+
+.intro.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Projects fade-in effect */
+.projects {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.projects.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.about.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

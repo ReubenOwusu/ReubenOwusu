@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="Portfolio Engine.css" />
+  <title>Reuben O.com</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=contract,mail" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+  <nav class="navbar">
+    <div class="logo">Reuben Owusu</div>
+    <ul>
+      <li>
+        <a href="C:\Users\pikim\Downloads\Owusu Resume.pdf" target="_blank">
+          <span class="material-symbols-outlined contract-icon">contract</span>Resume
+        </a>
+      </li>
+      <li>
+        <a class="linkon" href="https://www.linkedin.com/in/reuben-owusu-1449421ab/" target="_blank">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA40lEQVR4nO3WPUpDQRiF4Ylo509hY+cGbKy00kowqLuwdxtWrsMF2NlFxModWN2IWIqFiGgeCUxgmMYQZ64G7gtTfOc7w8t0E0JHCAFHeFSOIfrTiMfF0jTTiKsQZhC/4AZvbYpfsRnzbXy2Jb7Ldk1b4nfsxPwEo7bEY77w5JeEGcTn8VzE+TnJrvCAMxzjFLelxL2YL8f5PunuYi27v4DrquIJWM/mg9ov7mEQ88sk36gt3kp6H1iM+VJt8V7WXUl2o5ri/ay72oknzJW4COE/i4d/9fXpF5Y3OPxR3NEx13wDbEyDXQwe//8AAAAASUVORK5CYII=" alt="linkedin">LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="mailto:owusuosu99@gmail.com" target="_blank">
+          <span class="material-symbols-outlined mail-icon">mail</span>Email
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Intro -->
+    <section class="intro">
+      <h1>Hello, I'm Reuben Owusu</h1>
+      <p>
+        I'm an aspiring software engineer attending The Ohio State University.
+      <p>
+    </section>
+
+    <!-- Projects Section (moved above About Me) -->
+    <section class="projects">
+      <h1>Projects</h1>
+      <div class="project-card">
+        <a href="https://reubenowusu.github.io/TravelPersona.github.io/" target="_blank"><span class="clickable"></span></a>
+        <div class="project-image">
+          <img src="https://images.pexels.com/photos/4905089/pexels-photo-4905089.jpeg" alt="Project Preview">
+        </div>
+        <div class="project-info">
+          <h3>Survey Form</h3>
+          <p>
+            A web-based survey that asks about your travel prefernces.
+          </p>
+          <a href="https://reubenowusu.github.io/TravelPersona.github.io/" class="btn" target="_blank">View Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section (moved below Projects) -->
+      <h2>About Me</h2>
+      <section class="about">
+      <p>
+        In the three years that I've worked on software development projects, primarily in webpage development, 
+        I've continued to hone my craft through every project I've finished while pursuing my computer engineering degree.
+      </p>
+      <p>
+        I'm an adaptable and motivated developer that likes to tackle challenging concepts and topics 
+        that push my knowledge of programming and problem-solving. 
+        I strive to make my programs unqiue yet accessible with strong research, planning, and design abilities.
+      </p>
+      <p>
+        Outside of coding I'm usually reading, video playing games, or listening to new albums from artisit I frequent or from varying genres. 
+        I also plan to start a vinyl collection in the near future. 
+      </p>
+    </section>
+  </main>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".intro, .projects, .about");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // only animate once
+        }
+      });
+    }, { threshold: 0.2 }); // trigger when 20% visible
+
+    sections.forEach(section => observer.observe(section));
+  });
+</script>
+
+  <!-- Footer -->
+  <footer>
+    © Reuben Owusu 2025
+  </footer>
+</body>
+</html>
