@@ -488,4 +488,24 @@ footer {
 .disabled-project .clickable {
   cursor: not-allowed;
 }
+
+}
+/* Blue Button Layout */
+.btn-blue {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #3182ce; /* Base Blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.btn-blue:hover {
+  background: #63b3ed; /* Lighter Blue on Hover */
+  transform: scale(1.05);
 }
