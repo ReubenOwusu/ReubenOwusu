@@ -52,74 +52,46 @@
       </div>
     </div>
 
-    <!-- Transitional Project Section -->
-    <section class="projects">
+   <section class="projects">
       <div class="section-oval-whiteboard-frame">
         <h1 class="section-title">Projects</h1>
         
-        <div class="carousel-wrapper">
-          <!-- Left Button -->
-          <button class="carousel-btn prev-btn" id="prevBtn" disabled>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-
-          <div class="slider-container">
-            <div class="slider-track" id="sliderTrack">
-              
-              <!-- Project 1 -->
-              <div class="project-card-wrapper">
-                <div class="project-card">
-                  <a href="https://reubenowusu.github.io/TravelPersona.github.io/" target="_blank"><span class="clickable"></span></a>
-                  <div class="project-image">
-                    <img src="https://images.pexels.com/photos/4905089/pexels-photo-4905089.jpeg" alt="Project Preview">
-                  </div>
-                  <div class="project-info">
-                    <h3>Survey Form</h3>
-                    <p>
-                      A web-based survey that asks about your travel preferences.
-                    </p>
-                    <a href="https://reubenowusu.github.io/TravelPersona.github.io/" class="btn" target="_blank">View Project</a>
-                  </div>
-                </div>
-              </div>
-
-            <!-- Project 2: Narra -->
-<div class="project-card-wrapper">
-  <div class="project-card">
-    <!-- Restored href to route to the Narra dashboard -->
-    <a href="https://reubenowusu.github.io/Narra/"><span class="clickable"></span></a>
-    
-    <div class="project-image">
-      <!-- Update this path to your actual Narra preview image -->
-      <img src="ImgTemp/beta-stamp-logo.jpg" alt="Narra Narrative Editor Preview">
-    </div>
-    
-    <div class="project-info">
-      <h3>Narra</h3>
-      <p>
-        A narrative timeline and story planning editor.
-      </p>
-      
-      <!-- Restored View Project button -->
-      <div class="project-links">
+        <!-- Flex column stack with a gap to separate the cards vertically -->
+        <div style="display: flex; flex-direction: column; gap: 40px;">
+          
+          <!-- Project 1: Narra -->
+          <div class="project-card">
+            <a href="https://reubenowusu.github.io/Narra/"><span class="clickable"></span></a>
+            
+            <div class="project-image">
+              <img src="ImgTemp/beta-stamp-logo.jpg" alt="Narra Narrative Editor Preview">
+            </div>
+            
+            <div class="project-info">
+              <h3>Narra</h3>
+              <p>A narrative timeline and story planning editor.</p>
+              <div class="project-links">
                 <a href="https://reubenowusu.github.io/Narra/" class="btn-blue" target="_blank" style="position: relative; z-index: 2;">View Project</a>
               </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
+            </div>
+          </div>
 
-          <!-- Right Button -->
-          <button class="carousel-btn next-btn" id="nextBtn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
+          <!-- Project 2: Survey Form -->
+          <div class="project-card">
+            <a href="https://reubenowusu.github.io/TravelPersona.github.io/" target="_blank"><span class="clickable"></span></a>
+            
+            <div class="project-image">
+              <img src="ImgTemp/survey-logo.jpg" alt="Travel Persona Survey logo">
+            </div>
+            
+            <div class="project-info">
+              <h3>Survey Form</h3>
+              <p>A web-based survey that asks about your travel preferences.</p>
+              <a href="https://reubenowusu.github.io/TravelPersona.github.io/" class="btn" target="_blank" style="position: relative; z-index: 2;">View Project</a>
+            </div>
+          </div>
+
         </div>
-
       </div>
     </section>
 
@@ -157,50 +129,6 @@
       }, { threshold: 0.1 });
 
       sections.forEach(section => observer.observe(section));
-
-      // --- NEW: Carousel Slider Logic ---
-      const track = document.getElementById('sliderTrack');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const cards = document.querySelectorAll('.project-card');
-      
-      let currentIndex = 0;
-
-      function updateCarousel() {
-        // Slide the track
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-        // Update Left Button State (Greyed out & Minimized)
-        if (currentIndex === 0) {
-          prevBtn.disabled = true;
-        } else {
-          prevBtn.disabled = false;
-        }
-
-        // Update Right Button State (Greyed out & Minimized)
-        if (currentIndex === cards.length - 1) {
-          nextBtn.disabled = true;
-        } else {
-          nextBtn.disabled = false;
-        }
-      }
-
-      prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateCarousel();
-        }
-      });
-
-      nextBtn.addEventListener('click', () => {
-        if (currentIndex < cards.length - 1) {
-          currentIndex++;
-          updateCarousel();
-        }
-      });
-      
-      // Initialize states
-      updateCarousel();
     });
   </script>
 
